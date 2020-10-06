@@ -2,6 +2,7 @@ const express = require('express')
 const nunjucks = require('nunjucks')
 const routes = require('./routes')
 const server = express()
+const PORT = process.env.PORT || 5000
 
 server.use(express.urlencoded({ extended: true }))
 server.use(express.static('public'))
@@ -15,6 +16,6 @@ nunjucks.configure("views", {
     noCache: true
 })
 
-server.listen(5000, function() {
+server.listen(PORT, function() {
     console.log('Server is run!!!')
 })
