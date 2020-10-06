@@ -1,0 +1,129 @@
+ <div class="item ite-bord">
+                    <div>
+                        Avatar URL</div>
+                    <div>
+                        <input 
+                            type="url" 
+                            name="avatar_url" 
+                            placeholder="http://"
+                            value="{{ teachers.avatar_url }}"
+                            >
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div>
+                        Instrutor
+                    </div>
+                    <div class="ite-bord">
+                        <input 
+                            type="text" 
+                            name="name" 
+                            placeholder="Nome do Professor(a)"
+                            value="{{ teachers.name }}"
+                            >
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div>
+                        Data de Nascimento
+                    </div>
+                    <div class="ite-bord">
+                        <input 
+                            type="date" 
+                            name="birth"
+                            value="{{ teachers.birth }}"
+                            >
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div>
+                        Sexo
+                    </div>
+                    <div class="ite-bord">
+                        <span><input 
+                                    type="radio" 
+                                    name="gender" 
+                                    value="M"
+                                    {% if teachers.gender == 'M' %}
+                                    checked
+                                    {% endif %}
+                                    >
+                            Masculino</span>
+                        <span><input 
+                                    type="radio" 
+                                    name="gender" 
+                                    value="F"
+                                    {% if teachers.gender == 'F' %}
+                                    checked
+                                    {% endif %}
+                                    >
+                            Feminino</span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div>
+                        Grau de Escolaridade
+                    </div>
+                    <div class="ite-bord">
+                        <select name="escolaridade">
+                            <option value="select">Selecione</option>
+                            <option value="MC"                                     
+                                    {% if teachers.escolaridade == 'MC' %}
+                                    selected
+                                    {% endif %}>Ensino Médio Completo</option>
+                            <option value="SC"
+                                    {% if teachers.escolaridade == 'SC' %}
+                                    selected
+                                    {% endif %}>Ensino Superior Completo</option>
+                            <option value="MD"
+                                    {% if teachers.escolaridade == 'MD' %}
+                                    selected
+                                    {% endif %}
+                                >Mestrado e Doutorado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div>
+                        Type Learn
+                    </div>
+                    <div class="ite-bord">
+                        <span><input 
+                                type="radio" 
+                                name="type_learn" 
+                                value="presencial"
+                                {% if teachers.type_learn == 'presencial' %}
+                                    checked
+                                {% endif %}>
+                            Presencial</span>
+                        <span><input 
+                                type="radio" 
+                                name="type_learn" 
+                                value="distancia"
+                                {% if teachers.type_learn == 'distancia' %}
+                                    checked
+                                {% endif %}>                                
+                            Distância</span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div>
+                        Skils
+                    </div>
+                    <div class="ite-bord">
+                        <input 
+                                type="text" 
+                                name="learn" 
+                                placeholder="Separe os serviços prestados por virgula"
+                                value="{{ teachers.learn }}"
+                                >
+                    </div>
+                </div>
+                <button type="submit">Salvar</button>
+            </section>

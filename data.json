@@ -1,0 +1,37 @@
+{
+  "teachers": [
+    {
+      "id": 1,
+      "avatar_url": "http://www.google.com",
+      "name": "Igor Borba",
+      "birth": 614736000000,
+      "gender": "M",
+      "escolaridade": "SC",
+      "type_learn": "presencial",
+      "learn": "Portugues, matematica",
+      "create_at": 1599408045123
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://www.cursoemvideo.com/wp-content/uploads/2019/07/man-laptop2.jpg",
+      "name": "Gustavo Guanabara",
+      "birth": 410140800000,
+      "gender": "M",
+      "escolaridade": "SC",
+      "type_learn": "distancia",
+      "learn": "HTML, CSS, JavaScript, Java, Python",
+      "create_at": 1601243463085
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://i1.wp.com/www.sandrapaschoal.com.br/wp-content/uploads/2016/10/pasquale-e1475504775238.jpg",
+      "name": "Professor Pasquale",
+      "birth": -16416000000,
+      "gender": "M",
+      "escolaridade": "MD",
+      "type_learn": "distancia",
+      "learn": "Português",
+      "create_at": 1601248656162
+    }
+  ]
+}
