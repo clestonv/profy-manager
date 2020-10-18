@@ -274,6 +274,10 @@ tbody tr td:first-child span {
     box-shadow: 3px 1px 6px -4px #000;
 }
 
+tbody tr td:first-child span:hover {
+    border: var(--primary-color);
+}
+
 tbody tr td:last-child a {
     background-color: var(--primary-color);
     padding: 8px 16px;
