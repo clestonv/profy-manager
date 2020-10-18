@@ -79,4 +79,30 @@ exports.edit = function(req, res) {
     //Logo abaixo vou enviar o dados após o edit um objeto
     return res.render('teachers/edit', { teachers })
 }
+
+exports.put = function (req, res) {
+    const { id } = req.body
+
+    let index = 0
+
+    const foundTeachers = data.teachers.find(function(teachers, index){
+        return teachers.id == id
+    })
+
+    if (!foundTeachers) return res.send("Teachers not found!!")
+
+    const teacher = {
+        ...foundTeachers,
+        ...req.body,
+        birth: Date.parse(req.body.birth)
+    }
+
+    data.teachers[index] = teacher
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
+        if(err) return res.send("Write Error!")
+
+        return res.redirect(`/teachers/${id}`)
+    })
+}
 // delete
