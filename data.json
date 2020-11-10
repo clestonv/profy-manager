@@ -1,4 +1,18 @@
 {
+  "students": [
+    {
+      "avatar_url": "https://images.unsplash.com/photo-1584380931214-dbb5b72e7fd0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=687&q=80",
+      "name": "Cleberson Osorio",
+      "email": "cleberson.osorioti@hotmail.com",
+      "birth": 604195200000,
+      "gender": "M",
+      "escolaridade": "7",
+      "type_learn": "presencial",
+      "time": "90",
+      "id": 1,
+      "create_at": 1604968206143
+    }
+  ],
   "teachers": [
     {
       "id": 2,

@@ -1,0 +1,20 @@
+{% extends "layout.njk" %}
+{% block head%}
+    <title>Proff | Register
+    </title>
+    {% endblock%}
+    
+    {% block content %}
+        <form class="card" method="POST" action="/students">
+            <section class="avatar" style="background: url(https://source.unsplash.com/collection/3465564/500x500) no-repeat  center center / cover"></section>
+            <section class="details">
+
+                <h3>New Student</h3>
+
+                {% include 'students/fields.njk' %}
+
+                <button type="submit">Salvar</button>
+            </section>
+        </form>
+
+    {% endblock content %}

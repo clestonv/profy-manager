@@ -1,6 +1,6 @@
 const fs = require('fs') // FileSystem
-const data = require('./data.json')
-const { age, graduation, date } = require('./utils')
+const data = require('../data.json')
+const { age, graduation, date } = require('../utils')
 const Intl = require('intl')
 
 //index
@@ -29,6 +29,10 @@ exports.show = function(req, res){
     return res.render("teachers/show", { teachers })
 }
 // create
+exports.create = function (req, res) {
+    return res.render('teachers/create')
+}
+
 exports.post = function (req, res) {
 
     // Validate
