@@ -6,17 +6,17 @@
     {% block content %}
         <div class="card">
             
-            <section class="avatar" style="background: url({{ teachers.avatar_url }}) no-repeat  center center / cover">
+            <section class="avatar" style="background: url({{ students.avatar_url }}) no-repeat  center center / cover">
             </section>
 
             <section class="details">
-                <form method="POST" action="/teachers?_method=PUT">
+                <form method="POST" action="/students?_method=PUT">
 
                     <h3>Edit Student</h3>
 
-                    {% include 'teachers/fields.njk' %}
+                    {% include 'students/fields.njk' %}
 
-                    <input type="hidden" name="id" value="{{ teachers.id }}">
+                    <input type="hidden" name="id" value="{{ students.id }}">
                     <div class="button-side">
                         <button type="submit">Salvar</button>
                         <button type="submit" form="form-delete">Deletar</button>
@@ -24,8 +24,8 @@
                     
                 </form>
 
-                <form id="form-delete" action="/teachers?_method=DELETE" method="POST">
-                    <input type="hidden" name="id" value=" {{ teachers.id }} ">
+                <form id="form-delete" action="/students?_method=DELETE" method="POST">
+                    <input type="hidden" name="id" value=" {{ students.id }} ">
                     
                 </form>
 

@@ -5,7 +5,7 @@
     <div class="card">
         <section
             class="picture"
-            style="background: url({{ teachers.avatar_url }}) no-repeat center center / cover"
+            style="background: url({{ students.avatar_url }}) no-repeat center center / cover"
         >        
         </section>
 
@@ -13,40 +13,42 @@
 
             <h3>About</h3>
             <div class="item ite-bord"">
-                <div> Professor(a) </div>
-                <div> {{ teachers.name }}</div>
+                <div> Student </div>
+                <div> {{ students.name }}</div>
+            </div>
+            <div class="item">
+                <div> Email </div>
+                <div> {{ students.email }}</div>
             </div>
             <div class="item">
                 <div> Idade </div>
-                <div> {{ teachers.birth }} Anos</div>
+                <div> {{ students.birth }} Anos</div>
             </div>
             <div class="item">
                 <div> Sexo </div>
-                <div> {{ "Masculino" if teachers.gender == "M" else "Feminino"}} </div>
+                <div> {{ "Masculino" if students.gender == "M" else "Feminino"}} </div>
             </div>
             <div class="item">
-                <div> Grau de Escolaridade </div>
-                <div> {{ teachers.escolaridade }} </div>
+                <div> Ano Escolar </div>
+                <div> {{ students.escolaridade }}º Ano </div>
             </div>
             <div class="item">
                 <div> Tipo de Aula </div>
                 <span>
-                    {{ teachers.type_learn }}
+                    {{ students.type_learn }}
                 </span>
             </div>
             <div class="item">
-                <div> Acompanhamento </div>
-                <div> 
-                   {% for learn in teachers.learn %}
-                    <span>{{ learn }}</span>
-                {% endfor %}
+                <div> Carga Horária </div>
+                <div>                    
+                    <span>{{ students.time }} Horas</span>            
                 </div>
             </div>
             <div class="item">
                 <div> Desde </div>
-                <div> {{ teachers.create_at }}</div>
+                <div> {{ students.create_at }}</div>
             </div>
-            <a href="/teachers/{{ teachers.id }}/edit" class="button">Editar</a>
+            <a href="/students/{{ students.id }}/edit" class="button">Editar</a>
         </section>
 
     </div>

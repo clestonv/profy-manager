@@ -292,6 +292,23 @@ tbody tr td:last-child a {
     align-items: center;
 }
 
+.table-container a  {
+    margin-bottom: 8px;
+    width: 120px;
+    padding: 8px 16px;
+    display: grid;
+    text-decoration: none;
+    color: #FFF;
+    grid-template-columns: 25px 1fr;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--second-color);
+    font-size: 16px;
+    border-radius: 4px;
+    box-shadow: 3px 2px 4px -4px #000;
+}
+
 .table-container thead tr th:last-child,
 td:last-child {
     text-align: center;

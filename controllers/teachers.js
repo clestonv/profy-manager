@@ -82,7 +82,7 @@ exports.edit = function(req, res) {
 
     const teachers = {
         ...foundTeachers,
-        birth: date(foundTeachers.birth)
+        birth: date(foundTeachers.birth).iso
     }
     //Logo abaixo vou enviar o dados após o edit um objeto
     return res.render('teachers/edit', { teachers })

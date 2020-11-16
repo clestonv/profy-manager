@@ -20,7 +20,8 @@ exports.show = function(req, res){
    
     const students = {
         ...foundStudents,
-        birth: age(foundStudents.birth)       
+        birth: age(foundStudents.birth),
+        create_at: new Intl.DateTimeFormat("pt-BR").format(foundStudents.create_at)       
     }
     
     return res.render("students/show", { students })
@@ -46,9 +47,10 @@ exports.post = function (req, res) {
     const create_at = Date.now()
 
     let id = 1;
-    const lastId = data.students[data.students.length -1]
+    const lastId = data.students[data.students.length - 1]
+
     if (lastId) {
-        id = lastId + 1
+        id = lastId.id + 1
     }
 
     data.students.push({
@@ -78,7 +80,7 @@ exports.edit = function(req, res) {
 
     const students = {
         ...foundStudents,
-        birth: date(foundStudents.birth)
+        birth: date(foundStudents.birth).iso
     }
     //Logo abaixo vou enviar o dados após o edit um objeto
     return res.render('students/edit', { students })
@@ -95,14 +97,14 @@ exports.put = function (req, res) {
 
     if (!foundStudents) return res.send("Students not found!!")
 
-    const teacher = {
+    const student = {
         ...foundStudents,
         ...req.body,
         birth: Date.parse(req.body.birth),
         id: Number(req.body.id)
     }
 
-    data.students[index] = teacher
+    data.students[index] = student
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
         if(err) return res.send("Write Error!")
@@ -114,8 +116,8 @@ exports.put = function (req, res) {
 exports.delete = function( req, res ) {
     const { id } = req.body
 
-    const filterStudents = data.students.filter(function(teacher){
-        return teacher.id != id
+    const filterStudents = data.students.filter(function(student){
+        return student.id != id
     })
 
     data.students = filterStudents

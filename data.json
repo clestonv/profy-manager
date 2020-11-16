@@ -2,15 +2,15 @@
   "students": [
     {
       "avatar_url": "https://images.unsplash.com/photo-1584380931214-dbb5b72e7fd0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=687&q=80",
-      "name": "Cleberson Osorio",
+      "name": "Cleberson Tadeu Osorio",
       "email": "cleberson.osorioti@hotmail.com",
-      "birth": 604195200000,
+      "birth": 904089600000,
       "gender": "M",
-      "escolaridade": "7",
+      "escolaridade": "2",
       "type_learn": "presencial",
       "time": "90",
       "id": 1,
-      "create_at": 1604968206143
+      "create_at": 1605482216033
     }
   ],
   "teachers": [
