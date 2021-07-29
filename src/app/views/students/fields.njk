@@ -1,0 +1,112 @@
+<div class="item ite-bord">
+    <div>
+        Avatar URL
+    </div>
+    <div>
+        <input type="url" name="avatar_url" placeholder="http://" value="{{ students.avatar_url }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        Student
+    </div>
+    <div class="ite-bord">
+        <input type="text" name="name" placeholder="Name Student" value="{{ students.name }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        Email
+    </div>
+    <div class="ite-bord">
+        <input type="email" name="email" placeholder="" value="{{ students.email }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        Data de Nascimento
+    </div>
+    <div class="ite-bord">
+        <input type="date" name="birth_date" value="{{ students.birth_date }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        Sexo
+    </div>
+    <div class="ite-bord">
+        <span>
+            <input 
+                type="radio" 
+                name="gender" 
+                value="M" 
+                {% if students.gender == 'M' %} 
+                checked="checked" 
+                {% endif %}>
+                Masculino
+        </span>
+        <span><input type="radio" name="gender" value="F" {% if students.gender == 'F' %} checked="checked" {% endif %}>
+            Feminino</span>
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        Ano Escolar
+    </div>
+    <div class="ite-bord">
+        <select name="year_learn">
+            <option value="select">Selecione</option>
+            <option >- Ensino Fundamental -</option>
+            <option value="5" {% if students.year_learn == '5' %} selected="selected" {% endif %}>5º Ano</option>
+            <option value="6" {% if students.year_learn == '6' %} selected="selected" {% endif %}>6º Ano</option>
+            <option value="7" {% if students.year_learn == '7' %} selected="selected" {% endif %}>7º Ano</option>
+            <option value="8" {% if students.year_learn == '8' %} selected="selected" {% endif %}>8º Ano</option>
+            <option value="select">- Ensino Médio -</option>
+            <option value="1" {% if students.year_learn == '1' %} selected="selected" {% endif %}>1º Ano</option>
+            <option value="2" {% if students.year_learn == '2' %} selected="selected" {% endif %}>2º Ano</option>
+            <option value="3" {% if students.year_learn == '3' %} selected="selected" {% endif %}>3º Ano</option>
+        </select>
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        Type Learn
+    </div>
+    <div class="ite-bord">
+        <span><input type="radio" name="class_type" value="presencial" {% if students.class_type == 'presencial' %} checked="checked" {% endif %}>
+            Presencial</span>
+        <span><input type="radio" name="class_type" value="distancia" {% if students.class_type == 'distancia' %} checked="checked" {% endif %}>
+            Distância</span>
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        Carga Horária
+    </div>
+    <div class="ite-bord">
+        <input type="number" name="count_hours" placeholder="Ex: 25" value="{{ students.count_hours }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>
+         Professor
+    </div>
+    <div class="ite-bord">
+        <select name="teacher">
+            <option value="select"> Selecione </option>            
+            {% for  teacher in teacherOptions %}            
+                <option value="{{ teacher.id}}" {% if students.teacher_id == teacher.id %} selected="selected" {% endif %}>
+                    {{ teacher.name }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+</div>

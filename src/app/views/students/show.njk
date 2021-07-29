@@ -22,7 +22,7 @@
             </div>
             <div class="item">
                 <div> Idade </div>
-                <div> {{ students.birth }} Anos</div>
+                <div> {{ students.birth_date }} Anos</div>
             </div>
             <div class="item">
                 <div> Sexo </div>
@@ -30,23 +30,29 @@
             </div>
             <div class="item">
                 <div> Ano Escolar </div>
-                <div> {{ students.escolaridade }}º Ano </div>
+                <div> {{ students.year_learn }}º Ano </div>
             </div>
             <div class="item">
                 <div> Tipo de Aula </div>
                 <span>
-                    {{ students.type_learn }}
+                    {{ students.class_type }}
                 </span>
             </div>
             <div class="item">
                 <div> Carga Horária </div>
                 <div>                    
-                    <span>{{ students.time }} Horas</span>            
+                    <span>{{ students.count_hours }} Horas</span>            
+                </div>
+            </div>
+            <div class="item">
+                <div> Aluno(a) De</div>
+                <div>                    
+                    <span>Prof {{ students.teacher_name }}</span>            
                 </div>
             </div>
             <div class="item">
                 <div> Desde </div>
-                <div> {{ students.create_at }}</div>
+                <div> {{ students.created_at }}</div>
             </div>
             <a href="/students/{{ students.id }}/edit" class="button">Editar</a>
         </section>

@@ -18,33 +18,35 @@
             </div>
             <div class="item">
                 <div> Idade </div>
-                <div> {{ teachers.birth }} Anos</div>
+                <div> {{ teachers.birth_date }} Anos</div>
             </div>
             <div class="item">
                 <div> Sexo </div>
                 <div> {{ "Masculino" if teachers.gender == "M" else "Feminino"}} </div>
             </div>
             <div class="item">
-                <div> Grau de Escolaridade </div>
-                <div> {{ teachers.escolaridade }} </div>
+                <div> Grau de Escolaridade </div>                
+                {% if teachers.education_level == 'MC' %}<div>Ensino Médio Completo</div>{% endif %}
+                {% if teachers.education_level == 'SC' %}<div>Ensino Superior Completo</div>{% endif %}
+                {% if teachers.education_level == 'MD' %}<div>Mestrado e Doutorado</div>{% endif %}
             </div>
             <div class="item">
                 <div> Tipo de Aula </div>
                 <span>
-                    {{ teachers.type_learn }}
+                    {{ teachers.class_type }}
                 </span>
             </div>
             <div class="item">
                 <div> Acompanhamento </div>
                 <div> 
-                   {% for learn in teachers.learn %}
+                   {% for learn in teachers.subjects_taught %}
                     <span>{{ learn }}</span>
                 {% endfor %}
                 </div>
             </div>
             <div class="item">
                 <div> Desde </div>
-                <div> {{ teachers.create_at }}</div>
+                <div> {{ teachers.created_at }}</div>
             </div>
             <a href="/teachers/{{ teachers.id }}/edit" class="button">Editar</a>
         </section>

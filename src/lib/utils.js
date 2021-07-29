@@ -1,5 +1,5 @@
 module.exports = {
-    age:  function (timestamp) {
+    age (timestamp) {
         const today = new Date() // Pegando a data atual
         const birthDate = new Date(timestamp) // Pegando o timestamp
 
@@ -15,7 +15,7 @@ module.exports = {
 
         return age // Retorna Idade
     },
-    graduation: function (escolaridade) {      
+    graduation (escolaridade) {      
         if (escolaridade == "MC") graduation = "Médio"
         if (escolaridade == "SC") graduation = "Superior"
         if (escolaridade == "MD") graduation = "Mestrado e Doutorado"       
@@ -23,7 +23,7 @@ module.exports = {
         return graduation
 
     },
-    date: function (timestamp) {        
+    date (timestamp) {        
             // Criando um novo objeto de data com o valor que vem no timestamp
             const date = new Date(timestamp)
             // yyyy
@@ -38,7 +38,8 @@ module.exports = {
                 month,
                 year,
                 iso: `${year}-${month}-${day}`,
-                birthDay: `${day}/${month}`
+                birthDay: `${day}/${month}`,
+                format: `${day}/${month}/${year}`
             }
     }
 }

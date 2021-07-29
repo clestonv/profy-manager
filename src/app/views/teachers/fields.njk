@@ -20,7 +20,7 @@
         Data de Nascimento
     </div>
     <div class="ite-bord">
-        <input type="date" name="birth" value="{{ teachers.birth }}">
+        <input type="date" name="birth_date" value="{{ teachers.birth_date }}">
     </div>
 </div>
 
@@ -49,11 +49,11 @@
         Grau de Escolaridade
     </div>
     <div class="ite-bord">
-        <select name="escolaridade">
+        <select name="education_level">
             <option value="select">Selecione</option>
-            <option value="MC" {% if teachers.escolaridade == 'MC' %} selected="selected" {% endif %}>Ensino Médio Completo</option>
-            <option value="SC" {% if teachers.escolaridade == 'SC' %} selected="selected" {% endif %}>Ensino Superior Completo</option>
-            <option value="MD" {% if teachers.escolaridade == 'MD' %} selected="selected" {% endif %}>Mestrado e Doutorado</option>
+            <option value="MC" {% if teachers.education_level == 'MC' %} selected="selected" {% endif %}>Ensino Médio Completo</option>
+            <option value="SC" {% if teachers.education_level == 'SC' %} selected="selected" {% endif %}>Ensino Superior Completo</option>
+            <option value="MD" {% if teachers.education_level == 'MD' %} selected="selected" {% endif %}>Mestrado e Doutorado</option>
         </select>
     </div>
 </div>
@@ -63,9 +63,9 @@
         Type Learn
     </div>
     <div class="ite-bord">
-        <span><input type="radio" name="type_learn" value="presencial" {% if teachers.type_learn == 'presencial' %} checked="checked" {% endif %}>
+        <span><input type="radio" name="class_type" value="presencial" {% if teachers.class_type == 'presencial' %} checked="checked" {% endif %}>
             Presencial</span>
-        <span><input type="radio" name="type_learn" value="distancia" {% if teachers.type_learn == 'distancia' %} checked="checked" {% endif %}>
+        <span><input type="radio" name="class_type" value="distancia" {% if teachers.class_type == 'distancia' %} checked="checked" {% endif %}>
             Distância</span>
     </div>
 </div>
@@ -75,6 +75,6 @@
         Skils
     </div>
     <div class="ite-bord">
-        <input type="text" name="learn" placeholder="Separe os serviços prestados por virgula" value="{{ teachers.learn }}">
+        <input type="text" name="subjects_taught" placeholder="Separe os serviços prestados por virgula" value="{{ teachers.subjects_taught }}">
     </div>
 </div>

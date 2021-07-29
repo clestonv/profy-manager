@@ -246,7 +246,7 @@ button[type="submit"]:nth-of-type(2):hover {
 
 td, th {
     padding: 16px;
-    border-bottom: 1px solid #D9D9D9;
+    border-bottom: 1px solid var(--third-color);
 }
 
 th {
@@ -260,8 +260,24 @@ tbody tr:last-child td {
 
 tbody tr td:first-child {
     display: grid;
-    grid-template-columns: 64px 1fr;
+    grid-template: 76px /64px 1fr;
     align-items: center;
+}
+
+tbody > tr > td:nth-child(2) > span,
+tbody > tr > td:nth-child(3) > span {
+    padding: 8px 16px !important;
+    background-color: var(--second-color);
+    border-radius: 16px;
+    color: var(--quarth-color);
+    margin-right: 4px;
+    margin-top: 8px;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    
 }
 
 tbody tr td:first-child span {
@@ -279,7 +295,7 @@ tbody tr td:first-child span:hover {
 }
 
 tbody tr td:last-child a {
-    background-color: var(--primary-color);
+    background-color: var(--second-color);
     padding: 8px 16px;
     text-decoration: none;
     color: #FFF;
@@ -290,6 +306,12 @@ tbody tr td:last-child a {
     display: flex;
     justify-content: center;
     align-items: center;
+
+}
+
+tbody tr td:last-child a:hover {
+    background-color: var(--third-color);
+    transition: all 200ms;
 }
 
 .table-container a  {
@@ -312,4 +334,69 @@ tbody tr td:last-child a {
 .table-container thead tr th:last-child,
 td:last-child {
     text-align: center;
+}
+
+/* Filters */
+
+.table-container .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.table-container .header a {
+    margin-top: 0;
+    width: 120px ;
+}
+
+.table-container .header form input {
+    border: 1px solid var(--third-color);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.table-container .header form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+    grid-gap: 8px;
+}
+
+.table-container .header form button {
+    background-color: var(--second-color);
+}
+
+.table-container .header form button {
+    margin: 0;
+}
+
+/* PAGINATION */
+
+.table-container {
+    display: grid;
+    grid-template: 64px 1fr 16px / 1fr;
+}
+
+.table-container .header {
+    margin: 0;
+    align-self: start;
+}
+
+.table-container .pagination {
+    margin: 0;
+    align-self: end;
+    justify-self: center;
+}
+
+.pagination a,
+.pagination span {
+    color: var(--quarth-color);
+    display: inline;
+    padding: 2px 4px;
+    margin-right: 16px;
+}
+
+.pagination a:hover {
+    filter: brightness(0.7);
 }
